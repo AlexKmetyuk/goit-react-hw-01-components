@@ -1,16 +1,29 @@
-import SocialProfile from './components/SocialProfile'
-import user from './user.json'
+import SocialProfile from './components/socialProfile/SocialProfile'
+import user from './components/socialProfile/user.json'
+import Statistics from './components/statistics/Statistics'
+import statisticalData from './components/statistics/statistical-data.json'
+import FriendList from './components/friends/FriendList'
+import friends from './components/friends/friends.json'
+import TransactionHistory from './components/transaction/TransactionHistory'
+import transaction from './components/transaction/transaction.json'
+
 
 function App() {
   return (
-    <div>
+    <>
       <SocialProfile
-      name={user.name}
-      tag={user.tag}
-      location={user.location}
-      avatar={user.avatar}
-      stats={user.stats}/>
-    </div>
+        name={user.name}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats} />
+      
+      <Statistics title="Upload stats" stats={statisticalData} />
+      
+      <FriendList friends={friends} />
+      
+      <TransactionHistory transaction={transaction}/>
+    </>
   );
 }
 
